@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jokes API</title>
+    <link href="jokes.css" rel="stylesheet" />
+  </head>
+  <body onload="loadJokeTypes()">
+    <h1>Get Random Jokes</h1>
+    <label for="type">Choose a joke type:</label>
+
+    <!-- The mini assignment say it can be hardcoded here: but to ensure data integrity; it's better
+         to rely only on one point of truth, and that should be server side -->
+    <select id="type"></select>
+
+    <label for="count">Number of jokes:</label>
+    <input type="number" id="count" min="1" value="1" />
+
+    <button onclick="getJokes()">Get Jokes</button>
+
+    <h2>Jokes:</h2>
+    <p id="info"></p>
+    <div id="jokes">
+      <p>Click the button to get jokes.</p>
+    </div>
+
+    <script src="jokes_handler.js"></script>
+  </body>
+</html>
