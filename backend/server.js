@@ -2,11 +2,14 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const jokes = require("./jokes.json");
+const path = require("path");
 const PORT = 3000;
 const ANY_TYPE = "any";
 
-app.use(cors());
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.use(cors());
+
+app.use(express.static(path.join(__dirname, "../public")));
 
 const validJokeTypes = Array.from(new Set(jokes.map((joke) => joke.type)))
   .concat(ANY_TYPE)
